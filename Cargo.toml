@@ -1,0 +1,18 @@
+[package]
+name = "show-subtitles"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+crate-type = ["cdylib"]
+
+[profile.release]
+opt-level = 3
+lto = true
+
+[dependencies]
+# "kplayer-rust-wrap" = "=1.5.6-rc2-10501"
+"kplayer-rust-wrap" = {path="../rust-wrap"}
+"serde_json" = "*"
