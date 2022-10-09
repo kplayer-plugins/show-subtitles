@@ -11,6 +11,8 @@ checksum = "1aab8fc367588b89dcee83ab0fd66b72b50b72fa1904d7095045ace2b0c81c35"
 [[package]]
 name = "kplayer-rust-wrap"
 version = "1.5.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7f7c5ee4316936e2ef2f549dfa44f0a9540b4eb25e2a5e8bcbf018b09f056d17"
 dependencies = [
  "protobuf",
 ]
