@@ -51,8 +51,12 @@ impl kplayer::plugin::BasePlugin for ShowSubtitles {
             let file_path = path_obj.parent().unwrap().to_str().unwrap();
             let file_name = path_obj.file_stem().unwrap().to_str().unwrap();
 
-            let srt_file_name = format!("{}/{}.srt", file_path, file_name);
-            let ass_file_name = format!("{}/{}.ass", file_path, file_name);
+            let mut srt_file_name = format!("{}.srt", file_name);
+            let mut ass_file_name = format!("{}.ass", file_name);
+            if !file_path.is_empty() {
+                srt_file_name = format!("{}/{}.srt", file_path, file_name);
+                ass_file_name = format!("{}/{}.ass", file_path, file_name);
+            }
 
             // find srt file
             if kplayer::util::os::file_exist(&srt_file_name) {
